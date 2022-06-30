@@ -1,2 +1,2 @@
 # easyexcel-scala
-easyExcel的Scala本本
+easyExcel的Scala版本
