@@ -1,7 +1,7 @@
 package com.easyexcel.metadata
 
-abstract class AbstractParameterBuilder[T : AbstractParameterBuilder, C <: BasicParameter] {
+abstract class AbstractParameterBuilder[T <: AbstractParameterBuilder[T, C], C <: BasicParameter] {
 
-  val a: Seq[Int]
+  def parameter(): C
 
 }
