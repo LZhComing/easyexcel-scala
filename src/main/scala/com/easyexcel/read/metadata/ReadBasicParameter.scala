@@ -4,4 +4,5 @@ import com.easyexcel.metadata.BasicParameter
 
 trait ReadBasicParameter extends BasicParameter {
 
+
 }
