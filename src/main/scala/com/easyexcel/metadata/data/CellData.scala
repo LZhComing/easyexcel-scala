@@ -1,6 +1,7 @@
-package com.easyexcel.metadata
+package com.easyexcel.metadata.data
 
 import com.easyexcel.enums.CellDataTypeEnum
+import com.easyexcel.metadata.Cell
 
 case class CellData[T](typ: CellDataTypeEnum,
                        numberValue: BigDecimal,
