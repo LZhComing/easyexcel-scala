@@ -3,14 +3,6 @@ package com.easyexcel.metadata
 import java.util.Locale
 
 trait BasicParameter {
+  def head(): Seq[Seq[String]]
 
-  val head: Seq[Seq[String]]
-
-  val autoTrim: Boolean
-
-  val use1904windowing: Boolean
-
-  val locale: Locale
-
-  val useScientificFormat: Boolean
 }
