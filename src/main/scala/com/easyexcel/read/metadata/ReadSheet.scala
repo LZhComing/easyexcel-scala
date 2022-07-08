@@ -1,5 +1,10 @@
 package com.easyexcel.read.metadata
 
-class ReadSheet() extends ReadBasicParameter {
-  override def head(): Seq[Seq[String]] = ???
+class ReadSheet(sheetNo: Int = None.orNull, sheetName: String = None.orNull) extends ReadBasicParameter {
+
+
+}
+
+object ReadSheet {
+
 }
