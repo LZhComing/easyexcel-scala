@@ -7,6 +7,7 @@ abstract class ReadBasicParameter extends BasicParameter {
 
   val headRowNumber: Int = 1
 
+
   val customReadListenerList: Seq[ReadListener[_]] = Seq.empty
 
 
