@@ -5,7 +5,7 @@ import com.easyexcel.read.listener.ReadListener
 
 abstract class ReadBasicParameter extends BasicParameter {
 
-  val headRowNumber: Int = None.orNull
+  val headRowNumber: Int = 1
 
   val customReadListenerList: Seq[ReadListener[_]] = Seq.empty
 
