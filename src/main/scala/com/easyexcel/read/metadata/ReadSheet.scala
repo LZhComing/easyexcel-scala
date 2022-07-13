@@ -1,11 +1,12 @@
 package com.easyexcel.read.metadata
 
 import com.easyexcel.converters.Converter
+import com.easyexcel.metadata.BasicParameter
 import com.easyexcel.read.listener.ReadListener
 
 import java.util.Locale
 
-case class ReadSheet(head: Seq[Seq[String]] = Seq.empty,
+case class ReadSheet(override val head: Seq[Seq[String]] = Seq.empty,
                      clazz: Option[Class[_]] = None,
                      customConverterList: Seq[Converter[_]] = Seq.empty,
                      autoTrim: Boolean = true,
