@@ -15,7 +15,9 @@ case class ReadSheet(override val head: Seq[Seq[String]] = Seq.empty,
                      useScientificFormat: Boolean = false,
                      headRowNumber: Int = 1,
                      customReadListenerList: Seq[ReadListener[_]] = Seq.empty,
-                     sheetNo: Int, sheetName: String) extends ReadBasicParameter {
+
+                     sheetNo: Int,
+                     sheetName: String) extends ReadBasicParameter {
 
 
 }

@@ -5,9 +5,9 @@ import com.easyexcel.read.listener.ReadListener
 
 trait ReadBasicParameter extends BasicParameter {
 
-//  val headRowNumber: Int
-//
-//  val customReadListenerList: Seq[ReadListener[_]]
+  val headRowNumber: Int
+
+  val customReadListenerList: Seq[ReadListener[_]]
 
 
 }

@@ -23,4 +23,6 @@ package com.easyexcel
  */
 trait EasyExcelFactory {
 
+
+
 }

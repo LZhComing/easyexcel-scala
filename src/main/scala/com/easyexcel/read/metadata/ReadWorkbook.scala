@@ -10,7 +10,7 @@ import java.io.{File, InputStream}
 import java.nio.charset.Charset
 import java.util.Locale
 
-case class ReadWorkbook(override val head: Seq[Seq[String]] = Seq.empty,
+case class ReadWorkbook(head: Seq[Seq[String]] = Seq.empty,
                         clazz: Option[Class[_]] = None,
                         customConverterList: Seq[Converter[_]] = Seq.empty,
                         autoTrim: Boolean = true,
@@ -19,6 +19,7 @@ case class ReadWorkbook(override val head: Seq[Seq[String]] = Seq.empty,
                         useScientificFormat: Boolean = false,
                         headRowNumber: Int = 1,
                         customReadListenerList: Seq[ReadListener[_]] = Seq.empty,
+
                         excelType: Option[ExcelTypeEnum] = None,
                         inputStream: Option[InputStream] = None,
                         file: Option[File] = None,
