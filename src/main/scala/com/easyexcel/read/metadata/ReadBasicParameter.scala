@@ -3,12 +3,11 @@ package com.easyexcel.read.metadata
 import com.easyexcel.metadata.BasicParameter
 import com.easyexcel.read.listener.ReadListener
 
-abstract class ReadBasicParameter extends BasicParameter {
+trait ReadBasicParameter extends BasicParameter {
 
-  val headRowNumber: Int = 1
+  val headRowNumber: Int
 
-
-  val customReadListenerList: Seq[ReadListener[_]] = Seq.empty
+  val customReadListenerList: Seq[ReadListener[_]]
 
 
 }

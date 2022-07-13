@@ -4,21 +4,21 @@ import com.easyexcel.converters.Converter
 
 import java.util.Locale
 
-trait BasicParameter {
+abstract class BasicParameter {
 
-  val head: Seq[Seq[String]] = Seq.empty
+  val head: Seq[Seq[String]]
 
-  val clazz: Option[Class[_]] = None
+  val clazz: Option[Class[_]]
 
-  val customConverterList: Seq[Converter[_]] = Seq.empty
+  val customConverterList: Seq[Converter[_]]
 
-  val autoTrim: Boolean  = true
+  val autoTrim: Boolean
 
-  val use1904windowing: Boolean = false
+  val use1904windowing: Boolean
 
-  val locale: Locale = Locale.getDefault
+  val locale: Locale
 
-  val useScientificFormat: Boolean = false
+  val useScientificFormat: Boolean
 
 
 }
