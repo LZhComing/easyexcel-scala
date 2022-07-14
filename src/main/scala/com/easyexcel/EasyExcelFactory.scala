@@ -1,5 +1,10 @@
 package com.easyexcel
 
+import com.easyexcel.read.builder.ExcelReaderBuilder
+import com.easyexcel.read.listener.ReadListener
+
+import java.io.File
+
 /**
  * Reader and writer factory class
  *
@@ -16,13 +21,13 @@ package com.easyexcel
  * <h3>Sample2</h3>
  *
  * @author jipengfei
- *//**
- * @author: zhengzhicong
- * @date: 2022/06/30 13:38
- * @description: ${description}
  */
 trait EasyExcelFactory {
 
 
+  def read(file: File, head: Class[_], readListener: ReadListener[_]): ExcelReaderBuilder = {
+    val builder = new ExcelReaderBuilder
+    builder
+  }
 
 }

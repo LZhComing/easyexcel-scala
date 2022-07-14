@@ -21,7 +21,7 @@ trait AbstractParameterBuilder[T <: AbstractParameterBuilder[T, C], C <: BasicPa
   def autoTrim(autoTrim: Boolean): T
 
 
-  def self: T = {
+  protected def self: T = {
     this.asInstanceOf[T]
   }
 
