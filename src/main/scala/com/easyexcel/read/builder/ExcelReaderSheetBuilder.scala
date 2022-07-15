@@ -1,12 +1,13 @@
 package com.easyexcel.read.builder
 
+import com.easyexcel.ExcelReader
 import com.easyexcel.converters.Converter
 import com.easyexcel.read.listener.ReadListener
 import com.easyexcel.read.metadata.ReadSheet
 
 import java.util.Locale
 
-class ExcelReaderSheetBuilder extends AbstractExcelReaderParameterBuilder[ExcelReaderSheetBuilder, ReadSheet] {
+class ExcelReaderSheetBuilder(val excelReader: ExcelReader) extends AbstractExcelReaderParameterBuilder[ExcelReaderSheetBuilder, ReadSheet] {
 
   override var parameter: ReadSheet = ReadSheet()
 
@@ -49,4 +50,25 @@ class ExcelReaderSheetBuilder extends AbstractExcelReaderParameterBuilder[ExcelR
     parameter = parameter.copy(customReadListenerList = parameter.customReadListenerList :+ readListener)
     self
   }
+
+  def sheetNo(sheetNo: Int): ExcelReaderSheetBuilder = {
+    parameter = parameter.copy(sheetNo = sheetNo)
+    this
+  }
+
+  def sheetName(sheetName: String): ExcelReaderSheetBuilder = {
+    parameter = parameter.copy(sheetName = Some(sheetName))
+    this
+  }
+
+  def build(): ReadSheet = parameter
+
+
+  def doRead(): Unit = {
+    excelReader.read(Seq(build()))
+    excelReader.finish()
+  }
+
+
+
 }

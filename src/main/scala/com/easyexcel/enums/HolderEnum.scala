@@ -1,6 +1,6 @@
 package com.easyexcel.enums
 
-sealed trait HolderEnum {
+sealed abstract class HolderEnum {
 
   case object WORKBOOK extends HolderEnum
 

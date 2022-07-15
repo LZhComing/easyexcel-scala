@@ -1,6 +1,6 @@
 package com.easyexcel.enums
 
-sealed trait CellDataTypeEnum {
+sealed abstract class CellDataTypeEnum {
 
   case object STRING extends CellDataTypeEnum
 

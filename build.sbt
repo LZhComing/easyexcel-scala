@@ -8,6 +8,6 @@ lazy val commonSettings = Seq(
   name := "easyexcel-scala",
   organization := "liquor",
   version := "0.0.1-SNAPSHOT",
-  scalaVersion := Versions.scala212,
+  scalaVersion := Versions.scala213,
   Dependencies.commons,
 )

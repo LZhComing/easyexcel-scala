@@ -4,10 +4,10 @@ import sbt._
 object Dependencies {
 
   object Versions  {
-    val scala212 = "2.12.10"
-    val log4j_api = "11.0"
-    val log4j = "2.11.1"
-    val commonsCsv = "1.8"
+    val scala213 = "2.13.8"
+    val log4j_api = "12.0"
+    val log4j = "2.18.0"
+    val commonsCsv = "1.9.0"
     val poi = "4.1.2"
   }
 

@@ -10,6 +10,7 @@ import com.easyexcel.read.metadata.ReadWorkbook
 import java.io.{File, InputStream}
 import java.nio.charset.Charset
 import java.util.Locale
+import scala.util.Using
 
 class ExcelReaderBuilder extends AbstractExcelReaderParameterBuilder[ExcelReaderBuilder, ReadWorkbook] {
 
@@ -116,6 +117,31 @@ class ExcelReaderBuilder extends AbstractExcelReaderParameterBuilder[ExcelReader
 
   def build(): ExcelReader = {
     new ExcelReader(parameter)
+  }
+
+  def doReadAll(): Unit = {
+    Using(build()) { reader =>
+      reader.readAll()
+    }
+  }
+
+  def sheet(): ExcelReaderSheetBuilder = {
+    sheet(None, None)
+  }
+
+  def sheet(sheetNo: Int): ExcelReaderSheetBuilder = {
+    sheet(Some(sheetNo), None)
+  }
+
+  def sheet(sheetName: String): ExcelReaderSheetBuilder = {
+    sheet(None, Some(sheetName))
+  }
+
+  def sheet(sheetNo: Option[Int], sheetName: Option[String]): ExcelReaderSheetBuilder = {
+    val builder = new ExcelReaderSheetBuilder(build())
+    sheetNo.foreach(no => builder.sheetNo(no))
+    sheetName.foreach(name => builder.sheetName(name))
+    builder
   }
 
 }
