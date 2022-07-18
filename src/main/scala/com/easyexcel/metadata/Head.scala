@@ -1,7 +1,7 @@
 package com.easyexcel.metadata
 
 import com.easyexcel.exception.ExcelGenerateException
-import com.easyexcel.metadata.properties.{ColumnWidthProperty, FontProperty, LoopMergeProperty, StyleProperty}
+import com.easyexcel.metadata.property.{ColumnWidthProperty, FontProperty, LoopMergeProperty, StyleProperty}
 
 import java.lang.reflect.Field
 

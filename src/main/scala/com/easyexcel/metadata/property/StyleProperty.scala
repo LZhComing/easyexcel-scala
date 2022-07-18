@@ -1,4 +1,4 @@
-package com.easyexcel.metadata.properties
+package com.easyexcel.metadata.property
 
 import com.easyexcel.metadata.data.DataFormatData
 

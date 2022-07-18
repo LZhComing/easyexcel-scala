@@ -5,13 +5,21 @@ import com.easyexcel.read.metadata.ReadWorkbook
 
 import java.io.{File, InputStream}
 
-abstract class ExcelTypeEnum(value: String)
+trait ExcelTypeEnum {
+  val value: String
+}
 
-case object csv extends ExcelTypeEnum(".csv")
+case object CSV extends ExcelTypeEnum {
+  override val value: String = ".csv"
+}
 
-case object xlsx extends ExcelTypeEnum(".xlsx")
+case object XLSX extends ExcelTypeEnum {
+  override val value: String = ".xlsx"
+}
 
-case object xls extends ExcelTypeEnum("xls")
+case object XLS extends ExcelTypeEnum {
+  override val value: String = ".xls"
+}
 
 object ExcelTypeEnum extends Enumeration {
 
@@ -34,16 +42,12 @@ object ExcelTypeEnum extends Enumeration {
           throw ExcelAnalysisException("File " + f.getAbsolutePath + " not exists.")
         } else {
           val fileName = f.getName
-          if (fileName.endsWith(csv.toString)) {
-            return csv
+          fileName match {
+            case _ if fileName.endsWith(CSV.value) => CSV
+            case _ if fileName.endsWith(XLS.value) => XLS
+            case _ if fileName.endsWith(XLSX.value) => XLSX
+            case _ => throw ExcelCommonException("Convert excel format exception.You can try specifying the 'excelType' yourself")
           }
-          if (fileName.endsWith(xlsx.toString)) {
-            return xlsx
-          }
-          if (fileName.endsWith(xls.toString)) {
-            return xls
-          }
-          throw ExcelCommonException("Convert excel format exception.You can try specifying the 'excelType' yourself")
         }
       case (_, _) => throw ExcelAnalysisException("File and inputStream must be a non-null.")
     }
